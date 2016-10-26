@@ -1,5 +1,6 @@
-"""#########################################################################################################################
-#The goal of this code is to run a grep command on remote servers, tally the total order count and display or email it to an intended target. ------completed 06-02-15
+"""##################################################################################################################
+#The goal of this code is to run a grep command on remote servers, tally the total order count and display or email it
+to an intended target. ------completed 06-02-15
 #
 #The script needs to be able to tally the total number of orders in an hour every hour from 5AM - 11PM, example: 
 # Hour 1 (5AM - 6AM) - 1 order(s)
@@ -29,7 +30,7 @@ Change log:
 06-03-15 - added timestamp to email that is sent
 06-04-15 - added the ability tally the sum of orders for every hour between every server
 
-############################################################################################################################"""
+####################################################################################################################"""
 
 #Function and API imports#
 from __future__ import with_statement
@@ -119,10 +120,15 @@ def send():
     
     #VARIABLES#
     
-    #hour = {"6AM-7AM": 0, "7AM-8AM" : 0, "8AM-9AM" : 0, "9AM-10AM" : 0, "10AM-11AM" : 0, "11AM-12PM" : 0, "12PM-1PM" : 0, "1PM-2PM" : 0, "2PM-3PM" : 0, "3PM-4PM" : 0, "4PM-5PM" : 0, "5PM-6PM" : 0, "6PM-7PM" : 0, "7PM-8PM" : 0, "8PM-9PM" : 0, "9PM-10PM" : 0, "10PM-11PM" : 0} #UNORDERED DICT
+    #hour = {"6AM-7AM": 0, "7AM-8AM" : 0, "8AM-9AM" : 0, "9AM-10AM" : 0, "10AM-11AM" : 0, "11AM-12PM" : 0,
+    # "12PM-1PM" : 0, "1PM-2PM" : 0, "2PM-3PM" : 0, "3PM-4PM" : 0, "4PM-5PM" : 0, "5PM-6PM" : 0, "6PM-7PM" : 0,
+    # "7PM-8PM" : 0, "8PM-9PM" : 0, "9PM-10PM" : 0, "10PM-11PM" : 0} #UNORDERED DICT
 
     IP = {}
-    hour = OrderedDict([("6AM-7AM",0), ("7AM-8AM",0), ("8AM-9AM",0), ("9AM-10AM",0), ("10AM-11AM",0), ("11AM-12PM",0), ("12PM-1PM",0), ("1PM-2PM",0), ("2PM-3PM",0), ("3PM-4PM" ,0), ("4PM-5PM",0), ("5PM-6PM",0), ("6PM-7PM",0), ("7PM-8PM",0), ("8PM-9PM",0), ("9PM-10PM",0), ("10PM-11PM",0)]) #dictionary to hold the final value
+    hour = OrderedDict([("6AM-7AM",0), ("7AM-8AM",0), ("8AM-9AM",0), ("9AM-10AM",0), ("10AM-11AM",0), ("11AM-12PM",0),
+                        ("12PM-1PM",0), ("1PM-2PM",0), ("2PM-3PM",0), ("3PM-4PM" ,0), ("4PM-5PM",0), ("5PM-6PM",0),
+                        ("6PM-7PM",0), ("7PM-8PM",0), ("8PM-9PM",0), ("9PM-10PM",0), ("10PM-11PM",0)])
+    #dictionary to hold the final value
     
     temp = ""
     currentDate = "" #will hold the current date in proper format
