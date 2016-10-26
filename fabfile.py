@@ -35,7 +35,6 @@ Change log:
 from __future__ import with_statement
 from fabric.api import *
 from fabric.colors import *
-from fabric.contrib.console import confirm
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
