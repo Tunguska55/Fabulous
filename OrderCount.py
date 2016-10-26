@@ -35,6 +35,6 @@ env.hosts = ['test_server']
 
 def orderSum():
     logDirectory = '/opt/ct-live/Crown/root/log/'
-    command = '
+    command = ''
     with cd(logDirectory):
-        local(g')
+        local()
