@@ -1,0 +1,17 @@
+#################################################################################The goal of this code is to run a grep command on remote servers, tally the tot#al order count and display or email it to an intended target.
+#
+#Servers:
+# app1 - 172.16.10.102
+# app2 - 172.16.10.103
+# app3 - 172.16.10.104
+# app4 - 172.16.10.105
+# web1 - 172.16.100.20
+# web2 - 172.16.100.21
+#
+#Command to be run:
+# grep -c "Order Payment Status" /opt/ct-live/Crown/root/log/tc-start.log 
+#
+#
+#
+################################################################################################################################################################
+

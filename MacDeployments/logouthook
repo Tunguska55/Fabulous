@@ -1,0 +1,52 @@
+#!/bin/bash
+
+###########################################
+##########################################
+#Notes:
+#
+#Please verify that all paths are properly set 
+#If you notice issues with the computer hanging after using the script
+#it's more than likely caused by the script waiting for a response or failing
+#
+#
+##########################################
+###########################################
+
+####Kill spotlight as a precaution
+#killall mds
+
+####Adds the date 
+#date >> /Users/Shared/log_drives.txt
+#date >> /Users/Shared/log.txt
+#date >> /Users/Shared/df_log.txt
+#date >> /Users/Shared/ps_log.txt
+
+####View all open processes before the shutdown
+#ps aux >> /Users/Shared/ps_log.txt
+
+####Checks full mount path
+#df -ha >> /Users/Shared/df_log.txt
+
+####Logs open files that might be causing the drives to not eject
+#echo "Search Query is for /Volumes/CROWNFS"
+#lsof | grep /Volumes/CROWNFS >> /Users/Shared/log_drives.txt
+#echo "Search Query is for /Volumes/*"
+#lsof | grep /Volumes/* >> /Users/Shared/log_drives.txt
+#lsof >> /Users/Shared/log.txt
+
+
+################################################################################
+##################################^^^FOR DEBUGGING^^^###########################################################################################################
+
+################################################################################
+################################vvv MAIN CODE vvv###############################################################################################################
+
+IFS=$'\n'
+array=($(find /Volumes -maxdepth 1 | grep -v Macintosh | grep -vx /Volumes))
+echo ${array[*]}
+echo ${#array[@]}
+for ((i=0;i<${#array[@]};i++)); do
+    echo "value of : $i"
+    echo "Array: ${array[i]}"
+    diskutil unmountDisk force ${array[i]}
+done
